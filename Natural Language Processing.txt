@@ -1,0 +1,10 @@
+from transformers import pipeline
+
+# Load translation pipeline
+translator = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+
+# Translate text
+english_text = "Hello, how are you?"
+spanish_translation = translator(english_text, max_length=40)[0]['translation_text']
+print("Spanish Translation:", spanish_translation)
+
